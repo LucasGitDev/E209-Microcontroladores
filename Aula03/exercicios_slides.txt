@@ -1,0 +1,91 @@
+// variável que varia de 0 a 255 
+unsigned char contador;
+unsigned short int contador;
+
+// variavel que varia de -128 a 127
+signed char entrada;
+signed short int entrada;
+
+// variável que varia de 0 a 65535
+unsigned int tempo;
+
+// variável que varia de -32768 a 32767
+int temperatura;
+
+// declaração da inclusao de uma biblioteca de definicoes de registros do microcontrolador de nome "avr.h"
+
+#include <avr.h>
+
+//
+
+#define IN 16
+//ou
+const IN = 16;
+
+// Exercicio dado A=55h e B=F0h sendo ambas unsigned char
+
+unsigned char A = 0x55;
+unsigned char B = 0xF0;
+
+// X = A & B
+unsigned char X = A & B;
+// X => 0x50 
+// X = 0101 0000
+
+unsigned char X = A | B;
+// X => 0xF5
+// X = 1111 0101
+
+unsigned char X = A && B;
+// X => 0x00 -> X = 0
+// X = 0000 0000
+
+unsigned char X = A || B;
+// X => 0x01 -> X = 1
+// X = 0000 0001
+
+unsigned char X = B >> 4;
+// X => 0x0F
+// X = 0000 1111
+
+unsigned char X = A << 1;
+// X => 0xAA
+// X = 1010 1010
+
+
+
+//Exercícios dos slides 33, 34 e 35:
+
+// 1)
+// a) main { }
+// unsigned char cont = 0;
+// delayms(1000); 
+// for(;;) {}
+
+// b) cont vai de 0 a 255
+
+// c) cont = cont + 1;
+
+// d) P1 será o complemento de cont (255 - cont)
+
+// 2)
+// a) 
+// Estrutura 1 -> números menores ou iguais a 10
+// Estrutura 2 -> sempre que a e b forem iguais a 0
+
+// b)
+// Estrutura 1 -> números maiores que 10
+// Estrutura 2 -> sempre que a e b forem diferentes de 0
+
+// c)
+// não seria viável, uma vez que não se trata de else if
+
+
+// 3)
+// a)
+// Estrutura 1 -> j == 10
+// Estrutura 3 -> j == 5
+// Estrutura 2 -> uma vez que o loop é infinito, sempre que j atingir o valor 65535 ele receberá o valor 0 e o loop continuará 
+
+// b)
+// a estrutura 3 poderá ser substituída
