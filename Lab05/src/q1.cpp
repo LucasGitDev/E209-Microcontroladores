@@ -12,6 +12,8 @@
 #define DESLIGA_PRESSED !(PINB & DESLIGA)
 #define SENSOR_PRESSED !(PINB & SENSOR)
 
+// Link para testar no TinkerCad: https://www.tinkercad.com/things/car8zXYx93I?sharecode=Zouxd9nRDiuOjUH4fUxEZKzrCo382AnXi5d5piCjcaE
+
 // Declaração de variáveis globais
 
 // Declaração de funções
@@ -32,7 +34,7 @@ int main()
     while (1)
     {
         // se liga estiver pressionado ligar e sensor desligado
-        if (LIGA_PRESSED && SENSOR_PRESSED)
+        if (LIGA_PRESSED && !SENSOR_PRESSED)
         {
             PORTD &= ~ALARME; // Desligar o alarme
             PORTD |= MOTOR;   // Ligar o motor

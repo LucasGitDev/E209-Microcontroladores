@@ -14,6 +14,8 @@
 #define BOTAO_B_PRESSED !(PINB & BOTAO_B)
 #define BOTAO_C_PRESSED !(PINB & BOTAO_C)
 
+// Link para testar no TinkerCad: https://www.tinkercad.com/things/car8zXYx93I?sharecode=Zouxd9nRDiuOjUH4fUxEZKzrCo382AnXi5d5piCjcaE
+
 // Declaração de variáveis globais
 
 // Declaração de funções
