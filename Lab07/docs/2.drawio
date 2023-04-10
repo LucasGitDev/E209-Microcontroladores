@@ -1,0 +1,120 @@
+<mxfile host="65bd71144e">
+    <diagram id="NMGoGffsgF2BX5knhiSa" name="Página-1">
+        <mxGraphModel dx="312" dy="235" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Início" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="40" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Estado = Espera" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Não" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Sim" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4">
+                    <mxGeometry x="-0.6296" relative="1" as="geometry">
+                        <mxPoint x="130" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="250" y="320"/>
+                            <mxPoint x="250" y="240"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Caso&lt;br&gt;Espera" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="270" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Não" style="edgeStyle=none;html=1;" edge="1" parent="1" source="7" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="7" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="SENSOR_MIN&lt;br&gt;acionado?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="75" y="460" width="110" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Sim" style="edgeStyle=none;html=1;" edge="1" parent="1" source="10" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Não" style="edgeStyle=none;html=1;" edge="1" parent="1" source="10" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="SENSOR_MAX&lt;br&gt;acionado?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="75" y="640" width="110" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;" edge="1" parent="1" source="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="549.9999999999998" y="690" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Desligar válvula" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="660" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;" edge="1" parent="1" source="16">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="550" y="870"/>
+                            <mxPoint x="550" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="Ligar Válvula" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;" edge="1" parent="1" source="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="549.9999999999998" y="510" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="Ligar Válvula" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="40" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="S_MAX (IN)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="325" y="70" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="S_MIN (IN)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="325" y="40" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="CHEIO (OUT)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="325" y="100" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="ENCHENDO (OUT)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="130" width="75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="VALVULA (OUT)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="325" y="160" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="PD2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="40" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="PD4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="100" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="PD5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="130" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="PD6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="165" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="PD3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="71" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="ARDUINO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="101" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
