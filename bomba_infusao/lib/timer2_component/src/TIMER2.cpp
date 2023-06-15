@@ -29,15 +29,24 @@ void TIMER2_stop()
     timer2_cont = 0;
 }
 
+int calc_cont(int milisegundos)
+{
+    return milisegundos * 10;
+    // milisegundos == 1000 -> 1000 * 10 = 10000
+    // milisegundos == 250 -> 250 * 10 = 2500
+    // milisegundos == 500 -> 500 * 10 = 5000
+    // milisegundos == 750 -> 750 * 10 = 7500
+}
+
 ISR(TIMER2_COMPA_vect) // Rotina de interrupção do Timer 2
 {
     timer2_cont++;
 
-    if (timer2_cont == 10000)
+    if (timer2_cont == calc_cont(1000)) // Quero entrar nesse if a cada 1 segundo
     {
         timer2_cont = 0;
         timer2_segundos++;
-        
+
         char message[20];
         snprintf(message, 20, "Segundos: %d\n", timer2_segundos);
         timer2_callback(message);
