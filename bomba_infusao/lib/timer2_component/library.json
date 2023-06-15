@@ -1,0 +1,15 @@
+{
+  "name": "timer2",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Lucas",
+      "email": "lucas@email.com"
+    }
+  ],
+  "frameworks": {
+    "arduino": {
+      "path": "caminho/para/o/componente"
+    }
+  }
+}
