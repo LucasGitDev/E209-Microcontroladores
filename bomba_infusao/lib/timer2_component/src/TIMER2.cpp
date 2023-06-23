@@ -6,6 +6,7 @@ TIMER2_Callback timer2_callback;
 
 volatile unsigned int timer2_cont;
 volatile unsigned int timer2_segundos;
+unsigned int timer2_last_segundos;
 
 void TIMER2_setup(TIMER2_Callback callback)
 {
@@ -25,6 +26,7 @@ void TIMER2_start()
 void TIMER2_stop()
 {
     TIMSK2 = (0 << OCIE2A); // Fazer com que o Timer 2 não gere mais interrupções
+    timer2_last_segundos = timer2_segundos;
     timer2_segundos = 0;
     timer2_cont = 0;
 }
@@ -49,7 +51,7 @@ ISR(TIMER2_COMPA_vect) // Rotina de interrupção do Timer 2
 
         char message[20];
         snprintf(message, 20, "Segundos: %d\n", timer2_segundos);
-        timer2_callback(message);
+        timer2_callback(message, timer2_segundos);
     }
 }
 

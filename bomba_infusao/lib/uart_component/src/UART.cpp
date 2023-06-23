@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <stdlib.h>
+
 #include "UART.h"
 
 volatile char buffer[MAX_BUFFER_SIZE];
@@ -45,12 +47,6 @@ char *toString(void *dado, const char *formato)
     return buffer;
 }
 
-void UART_print(double valor)
-{
-    char buffer[30];
-    sprintf(buffer, "%lf", valor);
-    UART_Transmit(buffer);
-}
 
 void UART_print(int valor)
 {
@@ -64,6 +60,11 @@ void UART_print(uint16_t valor)
     char buffer[20];
     sprintf(buffer, "%u", valor);
     UART_Transmit(buffer);
+}
+
+void UART_print(float valor)
+{
+    UART_printFloat(valor, 2);
 }
 
 void UART_print(char caractere)
@@ -95,6 +96,18 @@ ISR(USART_RX_vect)
             bufferIndex++;
         }
     }
+}
+
+void UART_printFloat(float valor, uint8_t casasDecimais)
+{
+    // Cria um buffer temporário para a conversão
+    char buffer[20];
+
+    // Formata o valor float com as casas decimais desejadas
+    dtostrf(valor, 0, casasDecimais, buffer);
+
+    // Envia a string formatada pela UART
+    UART_print(buffer);
 }
 
 /*

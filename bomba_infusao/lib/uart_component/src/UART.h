@@ -23,7 +23,8 @@ void UART_setup(unsigned int ubrr);
 void UART_Transmit(char *dados);
 char *toString(void *dado, const char *formato);
 
-void UART_print(double valor);
+void UART_printFloat(float valor, uint8_t casasDecimais);
+void UART_print(float valor);
 void UART_print(int valor);
 void UART_print(uint16_t valor);
 void UART_print(char caractere);

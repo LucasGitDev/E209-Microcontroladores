@@ -12,7 +12,7 @@
  ****************************************************************************************
  */
 
-typedef void (*TIMER2_Callback)(char* data);
+typedef void (*TIMER2_Callback)(char* data, unsigned int seconds);
 
 void TIMER2_setup(TIMER2_Callback callback);
 void TIMER2_start();
