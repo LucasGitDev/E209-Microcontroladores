@@ -5,7 +5,7 @@ volatile char buffer[MAX_BUFFER_SIZE];
 volatile uint8_t bufferIndex = 0;
 volatile bool stringReceived = false;
 
-void UART_Init(unsigned int ubrr)
+void UART_setup(unsigned int ubrr)
 {
     UBRR0H = (unsigned char)(ubrr >> 8);
     UBRR0L = (unsigned char)ubrr;
@@ -30,6 +30,53 @@ void UART_Transmit(char *dados)
         // Passa para o próximo caractere do buffer dados
         dados++;
     }
+}
+
+char *toString(void *dado, const char *formato)
+{
+    char *buffer = (char *)malloc(MAX_BUFFER_SIZE * sizeof(char));
+    if (buffer == NULL)
+    {
+        // Erro ao alocar memória
+        return NULL;
+    }
+
+    snprintf(buffer, MAX_BUFFER_SIZE, formato, *(char *)dado);
+    return buffer;
+}
+
+void UART_print(double valor)
+{
+    char buffer[30];
+    sprintf(buffer, "%lf", valor);
+    UART_Transmit(buffer);
+}
+
+void UART_print(int valor)
+{
+    char buffer[20];
+    sprintf(buffer, "%d", valor);
+    UART_Transmit(buffer);
+}
+
+void UART_print(uint16_t valor)
+{
+    char buffer[20];
+    sprintf(buffer, "%u", valor);
+    UART_Transmit(buffer);
+}
+
+void UART_print(char caractere)
+{
+    char buffer[2];
+    buffer[0] = caractere;
+    buffer[1] = '\0';
+    UART_Transmit(buffer);
+}
+
+void UART_print(const char *string)
+{
+    UART_Transmit((char*)string);
 }
 
 ISR(USART_RX_vect)
@@ -74,7 +121,7 @@ volatile char *UART_GetString()
 int main_sample(void)
 {
 
-    UART_Init(MYUBRR);
+    UART_setup(MYUBRR);
 
     sei();
 

@@ -1,6 +1,6 @@
 
-#ifndef __ADC_COMPONENT__
-#define __ADC_COMPONENT__
+#ifndef __PWM_COMPONENT__
+#define __PWM_COMPONENT__
 
 #include <Arduino.h>
 /*
@@ -13,15 +13,10 @@
  ****************************************************************************************
  */
 
-typedef struct _adc
-{
-    u16 value;
-    float voltage;
-} adc;
-
-void ADC_setup(void);
-int ADC_read(u8 ch);
-adc ADC_get_from_adc(u8 ch);
+void PWM_setup(void);
+void PWM_stop(void);
+void PWM_set_duty_cycle(float duty_cycle);
+float PWM_get_duty_cycle(void);
 
 /*
  * GETTERS

@@ -104,11 +104,20 @@ ISR(PCINT0_vect)
     }
 }
 
+int calc_cont(int milisegundos)
+{
+    return milisegundos * 10;
+    // milisegundos == 1000 -> 1000 * 10 = 10000
+    // milisegundos == 250 -> 250 * 10 = 2500
+    // milisegundos == 500 -> 500 * 10 = 5000
+    // milisegundos == 750 -> 750 * 10 = 7500
+}
+
 ISR(TIMER2_COMPA_vect) // Rotina de interrupção do Timer 2
 {
     self.cont++;
 
-    if (self.cont == 10000)
+    if (self.cont == calc_cont(1000)) // Se o contador atingir 10000 (10000 * 100 us = 1 s)
     {
         self.cont = 0;
         self.segundos++;

@@ -2,7 +2,7 @@
 
 #include "ADC.h"
 
-void ADC_init(void)
+void ADC_setup(void)
 {
     // Configurando Vref para VCC = 5V
     ADMUX = (1 << REFS0);
@@ -48,15 +48,17 @@ int ADC_read(u8 ch)
  *   @brief: Função que retorna uma struct com o valor do ADC e a tensão
  *   @param: ch -> canal do ADC
  *   @return: adc -> struct com o valor do ADC e a tensão
- *  @example: adc adc_struct = get_from_adc(ADC0D); // lê o valor do ADC0 = PC0
+ *  @example: adc adc_struct = ADC_get_from_adc(ADC0D); // lê o valor do ADC0 = PC0
  */
-adc get_from_adc(u8 ch)
+adc ADC_get_from_adc(u8 ch)
 {
     u16 adc_result;
     adc_result = ADC_read(ch);
     _delay_ms(50);
-    float voltage = (adc_result * 5.0) / 1023;
-    adc adc_struct = {adc_result, voltage};
+    float voltage = (adc_result * 5.0) / 1023.0;
+    adc adc_struct = {
+        .value = adc_result,
+        .voltage = voltage};
     return adc_struct;
 }
 
