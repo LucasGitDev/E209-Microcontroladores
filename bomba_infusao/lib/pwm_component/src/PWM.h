@@ -15,6 +15,7 @@
 
 void PWM_setup(void);
 void PWM_stop(void);
+void PWM_active(void);
 void PWM_set_duty_cycle(float duty_cycle);
 float PWM_get_duty_cycle(void);
 
